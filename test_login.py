@@ -30,7 +30,7 @@ def main():
         today
         )
 
-        # Perform login
+        # Perform login with existing user (created in previous signup tests)
         page.login(username="DemoUser", password="StrongPassword")
         outcome_msg = None
 
@@ -45,7 +45,7 @@ def main():
             except Exception:
                 outcome_msg = "Unknown outcome"
 
-        
+
 
         # Save browser screenshot
         driver.save_screenshot("chrome_login_result.png")

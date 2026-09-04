@@ -3,8 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class LoginPage:
-    # Points to local file
-    URL = r"file:///C:/Users/bgian/graduate_projects/D781_Task2/registration/app1/templates/login.html"
+    # Points to Django server
+    URL = "http://127.0.0.1:8000/login/"
 
     # Element locators - Mapped to login HTML
     USERNAME = (By.ID, "username")

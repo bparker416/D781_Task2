@@ -36,7 +36,7 @@ class DjangoViewTests(unittest.TestCase):
             'password2': 'password2'
         })
         self.assertEqual(response.status_code, 200)  # Renders the same page again
-        self.assertIn("Your password and confrom password are not Same!!", response.content.decode())
+        self.assertIn("Your password and confirm password are not Same!!", response.content.decode())
 
     def test_login_success(self):
         # Test successful login

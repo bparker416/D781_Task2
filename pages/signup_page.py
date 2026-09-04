@@ -3,8 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 class SignupPage:
-    # Points to local file
-    URL = r"file:///C:/Users/bgian/graduate_projects/D781_Task2/registration/app1/templates/signup.html"
+    # Points to Django server
+    URL = "http://127.0.0.1:8000/"
 
     # Element locators - Mapped to signup HTML
     USERNAME = (By.ID, "username")

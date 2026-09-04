@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -21,10 +21,14 @@ def main():
             today_str
         )
 
+        # Create unique username with timestamp to avoid duplicate user errors
+        timestamp = datetime.now().strftime("%H%M%S")
+        unique_username = f"DemoUser{timestamp}"
+
         # Fill and submit sign-up form
         page.fill_form(
-            username="DemoUser",
-            email="DemoEmail@Demo.email",
+            username=unique_username,
+            email=f"demo{timestamp}@demo.email",
             password="StrongPassword"
         )
         page.submit()
@@ -38,6 +42,7 @@ def main():
         print(
             f"[{outcome}] Script completed - Student ID: {STUDENT_ID} - Date: {today_str}"
         )
+        print(f"Created user: {unique_username}")
 
     finally:
         input("Press any key to exit...")
